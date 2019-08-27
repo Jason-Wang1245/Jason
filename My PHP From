@@ -1,41 +1,71 @@
-<?php
+<h1 align=center>Test 2</h1>
 
+<?php 
+
+    $button='';
+
+    if(isset($_POST['button'])) {
+
+        $button = $_POST ['button'];
     
-$button='';
+    }
 
-if(isset($_POST['button'])) {
+    $file='';
 
-    $button = $_POST ['button'];
-    
-}
+    if(isset($_POST['file'])) {
 
-$file='';
-
-if(isset($_POST['file'])) {
-
-  $file = $_POST ['file'];
+        $file = $_POST ['file'];
   
-}
+    }
 
-  $input = file_get_contents($file);
+    if(!empty($file)){
+
+      $input = file_get_contents($file);
+
+    } else {
+    }
 
 ?>
 
-<form method='POST'>
+<head>
 
-<input type='file' name='file' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<br>
+</head>
 
-<input type='submit' name='button' />
+<form method='POST' class="container">
 
-<br>
+    <input type='file' name='file' class="btn btn-secondary" />
 
-<textarea name="input" cols="50" rows="11" id="comment" readonly="enabled">
-  <?php echo $input ?>
-</textarea>
+    <br>
+
+    <input type='submit' name='button' class="btn btn-secondary" />
+
+    <br>
 
 </form>
+
+<?php 
+if(!empty($file)){
+?>
+  <div class = "container">
+
+  <?php echo "<hr>"; ?>
+
+  </div>
+<?php
+} else {
+
+}
+?>
+
+<div class="container"> 
+
+<table class="table table-striped">
 
 <?php
 
@@ -101,33 +131,22 @@ if(isset($_POST['file'])) {
 
 </div>
 
-<div class = "container">
+<?php 
+if(!empty($file)){
+?>
+  <div class = "container">
     
-    <div class = "row">
+  <div class = "row">
 
-    <div class = "col-sm-4">
+  <div class = "col-sm-4">
 
 <?php 
 
-    echo "<hr>";
+  echo "<hr>";
 
-    $age = $age / $real_row_number;
+  $age = $age / $real_row_number;
 
-    echo "The average age is $age";
-
-?>
-
-</div>
-
-<div class = "col-sm-4">
-
-<?php
-
-    echo "<hr>";
-
-    $grade = $grade / $real_row_number;
-
-    echo "The average grade is $grade";
+  echo "The average age is $age";
 
 ?>
 
@@ -137,9 +156,23 @@ if(isset($_POST['file'])) {
 
 <?php
 
-    echo "<hr>";
+  echo "<hr>";
 
-    echo "Number of inputs for this form: $real_row_number";
+  $grade = $grade / $real_row_number;
+
+  echo "The average grade is $grade";
+
+?>
+
+</div>
+
+<div class = "col-sm-4">
+
+<?php
+
+  echo "<hr>";
+
+  echo "Number of inputs for this form: $real_row_number";
 
 ?>
 
@@ -148,3 +181,9 @@ if(isset($_POST['file'])) {
 </div>
 
 </div>
+
+<?php
+
+} else {
+}
+?>
