@@ -14,6 +14,36 @@
 ?>
 
 <head>
+<style>
+    body {                                                                                                                                                   
+      background: url(abstract-technology-programming-code-background-of-software-developer-computer-scriptor-or-software-concept_smsctm8tx_thumbnail-full01.png) no-repeat center center fixed;                                                                                       
+      -webkit-background-size: cover;                                                                                                                      
+      -moz-background-size: cover;                                                                                                                         
+      -o-background-size: cover;                                                                                                                           
+      background-size: cover;                                                                                                                              
+      text: #000000;                                                                                                                                     
+      bgcolor: #ffffff;
+      link: #0000ee;                                                                                                                                     
+      vlink: #551a8b;                                                                                                                                     
+      alink: #ff0000;                                                                                                                                    
+      padding: 30px;                                                                                                                                        
+    }                                                                                                                                                        
+    .opaque_box {                                                                                                                                            
+      background-image: url('');                                                                                                                           
+      border: 6px double black;                                                                                                                             
+      border-radius: 20px;                                                                                                                                 
+      padding: 2em;                                                                                                                                        
+      background-size: 140px 140px;                                                                                                                        
+      background-repeat: no-repeat;                                                                                                                        
+      background-position: right top;                                                                                                                      
+      background-color: #DAF7A6;                                                                                                                           
+      max-width:100%;                                                                                                                                    
+      margin:auto;                                                                                                                                         
+      opacity: 0.9;                                                                                                                                        
+      box-shadow: 20px 20px 20px #000;                                                                                                                     
+    } 
+  </style>
+<div id='InputArea' class='opaque_box'>
 <?php //Links for Bootstrap 4 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -23,9 +53,9 @@
 </head>
 <?php //The form ?>
 <form method='POST' class="container">
-  <input type='file' name='file' class="btn btn-secondary" />
+  <input type='file' name='file' class="btn btn-secondary btn-lg btn-block" />
   <br>
-  <input type='submit' name='button' class="btn btn-secondary" />
+  <input type='submit' name='button' class="btn btn-secondary btn-lg btn-block" />
   <br>
 </form>
 <?php //Seperation between the form and the table ?>
