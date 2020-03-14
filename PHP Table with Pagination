@@ -1,0 +1,78 @@
+<html>
+	<head>
+    		<title>PHP Learning</title>
+    		<meta charset="utf-8">
+    		<link rel="icon" href="tui.png" type="image/png" />
+    		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    		<!--data tables with multiple pages-->
+    		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    		<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    		<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+		<style type="text/css">
+			table {
+			    width: 40em;
+			    margin: 2em auto;
+			    }
+
+			    thead {
+			    background: #000;
+			    color: #fff;
+			    }
+
+			    td {
+			    width: 10em;
+			    padding: 0.3em;
+			    }
+
+			    tbody {
+			    background: #ccc;
+			    }
+    		</style>
+    		<script>
+			function test(pageNumber){
+		  		var page="#page-id-"+pageNumber;
+		  		$('.select').hide()
+		  		$(page).show()
+			}
+		</script>
+	</head>
+	<body>
+		<table border = '3' width ='100%' id="mydatatable" class="table table-hover table-sm table-bordered">
+		<thead>
+			<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+				$randnum = 0;
+				$number = 0;
+				$num = 0;
+				$name = ['Jason', 'Bob', 'Joe', 'Barry', 'Josh', 'Liam', 'Patrick'];
+				while($number<20){
+					echo "<tr>";
+					$num++;
+					$randnum = rand(1,100);
+					shuffle($name);
+					echo "<td>$num</td>";
+					echo "<td>$name[1]</td>";
+					echo "<td>$randnum</td>";
+					echo "</tr>";
+					$number++;
+				}
+			?>
+		</tbody>
+		</table>
+</body>
+<script language="javascript">
+	$(document).ready(function() {
+		    $('#mydatatable').DataTable({"ordering": false, "pageLength": 10});
+	} );
+</script>
+</html>
